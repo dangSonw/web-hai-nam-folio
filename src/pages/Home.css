@@ -1,0 +1,140 @@
+.home-page {
+  width: 100%;
+  max-width: clamp(1440px, 88vw, 2560px);
+  margin-inline: auto;
+  container-type: inline-size;
+}
+
+/* The hero is a layered typographic composition in the source frame. */
+.home-page .hero {
+  --art-scale: 1;
+  position: relative;
+  display: grid;
+  grid-template-columns: 80.972222% 19.027778%;
+}
+.home-page .hero-art { position: relative; height: calc(49.513889cqw * var(--art-scale)); }
+.home-page .hero-art::before,
+.home-page .hero-art::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--rule);
+}
+.home-page .hero-art::before { top: calc(5.625cqw * var(--art-scale)); }
+.home-page .hero-art::after { top: calc(15.277778cqw * var(--art-scale)); }
+.home-page .name {
+  position: absolute;
+  top: calc(2.638889cqw * var(--art-scale));
+  left: calc(2.638889cqw * var(--art-scale));
+  right: 0;
+  overflow: hidden;
+  font-family: var(--display-font);
+  font-size: calc(12.487989cqw * var(--art-scale));
+  font-weight: 400;
+  line-height: 1.256763;
+  white-space: nowrap;
+}
+.home-page .portfolio-word {
+  position: absolute;
+  top: calc(17.361111cqw * var(--art-scale));
+  left: calc(38.402778cqw * var(--art-scale));
+  font-family: var(--display-font);
+  font-size: calc(14.168192cqw * var(--art-scale));
+  font-weight: 400;
+  line-height: .85;
+}
+.home-page .robot {
+  position: absolute;
+  z-index: 2;
+  top: calc(9.513889cqw * var(--art-scale));
+  left: calc(11.25cqw * var(--art-scale));
+  width: calc(28.819444cqw * var(--art-scale));
+  height: auto;
+  display: block;
+}
+.home-page .hero-rule {
+  position: absolute;
+  top: calc(40.833333cqw * var(--art-scale));
+  left: 0;
+  width: 123.4991%;
+  height: 1px;
+  background: var(--rule);
+}
+.home-page .about-heading {
+  display: flex;
+  gap: 5cqw;
+  height: 4.513889cqw;
+  padding-left: 5.277778cqw;
+  overflow: hidden;
+  border-block: 1px solid var(--rule);
+  font-family: var(--display-font);
+  font-size: 5.719113cqw;
+  font-weight: 700;
+  line-height: .85;
+  white-space: nowrap;
+}
+.home-page .about-heading h2,
+.home-page .outline-title {
+  flex: 0 0 29.791667cqw;
+  font-size: inherit;
+  font-weight: inherit;
+  transform: translateY(-.208333cqw);
+}
+.home-page .outline-title { color: transparent; -webkit-text-stroke: 1px var(--ink); }
+.home-page .about-content {
+  display: grid;
+  grid-template-columns: 44.444444% 36.527778% 19.027778%;
+  min-height: 24.166667cqw;
+  border-bottom: 1px solid var(--rule);
+}
+.home-page .biography {
+  padding: 2.013889cqw 6.041667cqw 2cqw 5.277778cqw;
+  font-size: clamp(14px, 1.111111cqw, 29px);
+  line-height: 1.2;
+}
+.home-page .portrait { position: relative; }
+.home-page .portrait::before,
+.home-page .portrait::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--rule);
+}
+.home-page .portrait::before { left: 0; }
+.home-page .portrait::after { right: 0; }
+.home-page .portrait img { display: block; width: 100%; height: auto; }
+.home-page .bottom-space { height: 6.597222cqw; }
+
+.home-page .hero > *,
+.home-page .about-content > *,
+.home-page img { min-width: 0; }
+
+@media (max-width: 880px) {
+  .home-page .hero { --art-scale: 1.234991; grid-template-columns: minmax(0, 1fr); }
+  .home-page .hero-rule { width: 100%; }
+  .home-page .about-content { grid-template-columns: minmax(0, 640fr) minmax(0, 526fr); }
+  .home-page .about-spacer { display: none; }
+}
+
+@media (max-width: 600px) {
+  .home-page .about-heading {
+    align-items: center;
+    height: 48px;
+    padding-left: 20px;
+    gap: 32px;
+    font-size: clamp(32px, 7cqw, 48px);
+  }
+  .home-page .about-heading h2,
+  .home-page .outline-title { flex-basis: auto; transform: none; }
+  .home-page .about-content { grid-template-columns: minmax(0, 1fr); }
+  .home-page .biography { padding: 24px 20px; font-size: 16px; line-height: 1.4; }
+  .home-page .portrait { border-top: 1px solid var(--rule); border-inline: 0; }
+  .home-page .portrait::before,
+  .home-page .portrait::after { display: none; }
+  .home-page .about-spacer { display: none; }
+  .home-page .bottom-space { height: 32px; }
+}
