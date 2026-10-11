@@ -1,6 +1,6 @@
 .hobby-page .subpage-heading { gap: 9.583333cqw; }
 .hobby-page .subpage-heading > :last-child { margin-left: -1.180556cqw; }
-.hobby-page .sidebar-nav { padding-left: 2.638889cqw; }
+.subpage-canvas[data-page="hobby"] .sidebar-nav { padding-left: 2.638889cqw; }
 .hobby-page .subpage-content { padding-top: 9.791667cqw; padding-bottom: 2.638889cqw; }
 .hobby-page .hobby { min-width: 0; padding-bottom: 2.083333cqw; }
 .hobby-page .hobby-title {
@@ -32,7 +32,7 @@
 .hobby-page .hobby-games { padding-bottom: 0; }
 
 @media (max-width: 880px) {
-  .hobby-page .sidebar-nav { padding-left: 20px; }
+  .subpage-canvas[data-page="hobby"] .sidebar-nav { padding-left: 20px; }
   .hobby-page .hobby-title { line-height: 1.1; }
   .hobby-page .hobby-description { line-height: 1.15; }
 }

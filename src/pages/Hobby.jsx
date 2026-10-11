@@ -31,7 +31,7 @@ const hobbies = [
 
 export default function Hobby() {
   return (
-    <SubpageLayout title="Hobby" className="hobby-page" extraHeading={<span aria-hidden="true">Hobby</span>}>
+    <SubpageLayout title="Hobby" extraHeading={<span aria-hidden="true">Hobby</span>}>
       {hobbies.map(({ id, title, paragraph }) => (
         <section className={`hobby hobby-${id}`} key={id} aria-labelledby={`hobby-${id}-title`}>
           <h2 id={`hobby-${id}-title`} className="hobby-title">{title}</h2>

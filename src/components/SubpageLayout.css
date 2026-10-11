@@ -6,6 +6,11 @@
   min-height: 100vh;
   margin-inline: auto;
   container-type: inline-size;
+  transition: width .5s cubic-bezier(.4, 0, .2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subpage-canvas { transition: none; }
 }
 
 .subpage-canvas .subpage-navigation {

@@ -82,7 +82,7 @@ const projects = [
 
 export default function Research() {
   return (
-    <SubpageLayout title="Research" className="research-page">
+    <SubpageLayout title="Research">
       {projects.map(({ id, title, paragraph, photos }) => (
         <section className={`project project-${id}`} key={id} aria-labelledby={`research-${id}-title`}>
           <h2 id={`research-${id}-title`} className="project-title">{title}</h2>

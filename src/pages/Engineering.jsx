@@ -88,7 +88,7 @@ const projects = [
 
 export default function Engineering() {
   return (
-    <SubpageLayout title="Engineering" className="engineering-page">
+    <SubpageLayout title="Engineering">
       {projects.map(({ id, title, description, photos }) => (
         <section className={`project project-${id}`} key={id} aria-labelledby={`${id}-title`}>
           <h2 id={`${id}-title`} className="project-title">{title}</h2>

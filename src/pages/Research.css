@@ -1,5 +1,5 @@
 .research-page .subpage-heading { gap: 17.361111cqw; }
-.research-page .sidebar-nav { padding-left: 2.638889cqw; }
+.subpage-canvas[data-page="research"] .sidebar-nav { padding-left: 2.638889cqw; }
 
 .research-page .subpage-content {
   padding-top: 9.791667cqw;
@@ -77,7 +77,7 @@
 }
 
 @media (max-width: 880px) {
-  .research-page .sidebar-nav { padding-left: 20px; }
+  .subpage-canvas[data-page="research"] .sidebar-nav { padding-left: 20px; }
   .research-page .project-title { line-height: 1.1; }
   .research-page .project-description { line-height: 1.15; }
 }

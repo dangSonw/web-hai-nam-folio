@@ -1,5 +1,5 @@
 .community-page .subpage-heading { gap: 12.986111cqw; }
-.community-page .sidebar-nav { padding-left: 2.638889cqw; }
+.subpage-canvas[data-page="community"] .sidebar-nav { padding-left: 2.638889cqw; }
 
 .community-page .subpage-content {
   padding-top: 9.791667cqw;
@@ -56,7 +56,7 @@
 }
 
 @media (max-width: 880px) {
-  .community-page .sidebar-nav { padding-left: 20px; }
+  .subpage-canvas[data-page="community"] .sidebar-nav { padding-left: 20px; }
   .community-page .project-description { line-height: 1.15; }
   .community-page .project-title { line-height: 1.1; }
 }

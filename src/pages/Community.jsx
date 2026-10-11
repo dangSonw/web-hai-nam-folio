@@ -103,7 +103,7 @@ const projects = [
 
 export default function Community() {
   return (
-    <SubpageLayout title="Community" className="community-page">
+    <SubpageLayout title="Community">
       {projects.map(({ id, title, paragraphs, photos }) => (
         <section className={`project project-${id}`} key={id} aria-labelledby={`community-${id}-title`}>
           <h2 id={`community-${id}-title`} className="project-title">{title}</h2>
