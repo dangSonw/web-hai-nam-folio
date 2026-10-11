@@ -4,6 +4,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Engineering from './pages/Engineering.jsx';
 import Community from './pages/Community.jsx';
+import Research from './pages/Research.jsx';
 
 function PageTransition({ children }) {
   const reducedMotion = useReducedMotion();
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
           <Route path="/engineering" element={<PageTransition><Engineering /></PageTransition>} />
           <Route path="/community" element={<PageTransition><Community /></PageTransition>} />
+          <Route path="/research" element={<PageTransition><Research /></PageTransition>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatePresence>

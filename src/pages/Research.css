@@ -1,0 +1,108 @@
+.research-page .subpage-heading { gap: 17.361111cqw; }
+.research-page .sidebar-nav { padding-left: 2.638889cqw; }
+
+.research-page .subpage-content {
+  padding-top: 9.791667cqw;
+  padding-bottom: 7.777778cqw;
+}
+.research-page .project { min-width: 0; }
+.research-page .project-title {
+  min-height: 4.236111cqw;
+  padding: .763889cqw 3.263889cqw .9cqw 5.277778cqw;
+  border-block: 1px solid var(--rule);
+  font-family: var(--display-font);
+  font-size: clamp(22px, 2.777778cqw, 72px);
+  font-weight: 700;
+  line-height: .85;
+  overflow-wrap: anywhere;
+}
+.research-page .project-description {
+  margin: 2.083333cqw 3.263889cqw 0 5.277778cqw;
+  min-height: 11.944444cqw;
+  font-family: '42dot Sans', sans-serif;
+  font-size: clamp(16px, 1.666667cqw, 43px);
+  font-weight: 300;
+  line-height: 1;
+  text-align: justify;
+}
+.research-page .project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.423611cqw;
+  margin: 2.083333cqw 3.263889cqw 0 5.277778cqw;
+}
+.research-page .project-gallery > * { min-width: 0; }
+.research-page .project-gallery img { display: block; width: 100%; height: auto; }
+
+.research-page .project-physics { padding-bottom: 10.138889cqw; }
+.research-page .project-physics .project-description { min-height: 8.611111cqw; }
+.research-page .project-physics .project-gallery { margin-top: 4.236111cqw; }
+.research-page .project-virc { padding-bottom: 12.361111cqw; }
+.research-page .project-virc .project-description { margin-left: 5.208333cqw; margin-right: 1.875cqw; }
+.research-page .project-medical { padding-bottom: 5.763889cqw; }
+.research-page .project-medical .project-gallery {
+  grid-template-columns: minmax(0, 1fr);
+  width: 44.375cqw;
+  margin-left: 18.611111cqw;
+  margin-right: 0;
+}
+.research-page .project-fridge .project-description { min-height: 6.944444cqw; }
+.research-page .project-fridge .project-gallery {
+  grid-template-columns: minmax(0, 1fr);
+  width: 59.513889cqw;
+  margin-top: 3.194444cqw;
+  margin-right: 0;
+}
+
+/* These two native exports include the shadows outside their image frames. */
+.research-page .project-medical .project-gallery figure,
+.research-page .project-fridge .project-gallery figure { position: relative; }
+.research-page .project-medical .project-gallery figure { aspect-ratio: 639 / 607; }
+.research-page .project-fridge .project-gallery figure { aspect-ratio: 857 / 562; }
+.research-page .project-medical .project-gallery img,
+.research-page .project-fridge .project-gallery img {
+  position: absolute;
+  top: 0;
+  left: calc(-4 / 639 * 100%);
+  width: calc(647 / 639 * 100%);
+  max-width: none;
+}
+.research-page .project-fridge .project-gallery img {
+  left: calc(-4 / 857 * 100%);
+  width: calc(865 / 857 * 100%);
+}
+
+@media (min-width: 961px) {
+  .research-page .project-fridge .project-description { height: 6.944444cqw; }
+}
+
+@media (max-width: 880px) {
+  .research-page .sidebar-nav { padding-left: 20px; }
+  .research-page .project-title { line-height: 1.1; }
+  .research-page .project-description { line-height: 1.15; }
+}
+@media (max-width: 600px) {
+  .research-page .subpage-heading { gap: 32px; }
+  .research-page .subpage-content { padding-top: 40px; padding-bottom: 40px; }
+  .research-page .project { padding-bottom: 40px; }
+  .research-page .project-title { padding: 14px 20px; min-height: 0; font-size: 22px; }
+  .research-page .project-description,
+  .research-page .project-virc .project-description {
+    margin: 24px 20px 0;
+    min-height: 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .research-page .project-physics .project-description,
+  .research-page .project-fridge .project-description { min-height: 0; }
+  .research-page .project-gallery,
+  .research-page .project-physics .project-gallery,
+  .research-page .project-medical .project-gallery,
+  .research-page .project-fridge .project-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    width: auto;
+    gap: 16px;
+    margin: 24px 20px 0;
+  }
+  .research-page .project-fridge { padding-bottom: 0; }
+}

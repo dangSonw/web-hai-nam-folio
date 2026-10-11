@@ -4,7 +4,7 @@ import './SidebarNav.css';
 const sections = [
   { label: 'Engineering', nodeId: '15-2', path: '/engineering' },
   { label: 'Community', nodeId: '15-87', path: '/community' },
-  { label: 'Research', nodeId: '15-153' },
+  { label: 'Research', nodeId: '15-153', path: '/research' },
   { label: 'Hobby', nodeId: '45-2' },
 ];
 
