@@ -1,0 +1,89 @@
+.engineering-page .subpage-content {
+  padding-top: 9.791667cqw;
+  padding-bottom: 6.944444cqw;
+}
+
+.engineering-page .sidebar-nav { padding-left: 2.638889cqw; }
+
+.engineering-page .project-title {
+  min-height: 4.236111cqw;
+  padding: .763889cqw 3.263889cqw .9cqw 19.166667cqw;
+  border-block: 1px solid var(--rule);
+  font-family: var(--display-font);
+  font-size: clamp(22px, 2.777778cqw, 72px);
+  font-weight: 700;
+  line-height: .85;
+  overflow-wrap: anywhere;
+}
+
+.engineering-page .project-description {
+  margin: 2.083333cqw 3.263889cqw 0 19.166667cqw;
+  min-height: 15.763889cqw;
+  font-family: '42dot Sans', sans-serif;
+  font-size: clamp(16px, 1.666667cqw, 43px);
+  font-weight: 300;
+  line-height: 1;
+  text-align: justify;
+}
+
+.engineering-page .project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.423611cqw;
+  margin: 2.291667cqw 3.263889cqw 0 5.277778cqw;
+}
+
+.engineering-page .project-gallery > *,
+.engineering-page .project { min-width: 0; }
+.engineering-page .project-gallery img { display: block; width: 100%; height: auto; }
+
+.engineering-page .project-vex { padding-bottom: 9.930556cqw; }
+.engineering-page .project-conrad { padding-bottom: 5.902778cqw; }
+.engineering-page .project-conrad .project-description { min-height: 19.791667cqw; }
+.engineering-page .project-conrad .project-gallery { margin-top: 2.5cqw; }
+.engineering-page .project-fire { padding-bottom: 6.180556cqw; }
+.engineering-page .project-fire .project-description { min-height: 20.347222cqw; }
+.engineering-page .project-fire .project-gallery {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: .763889cqw;
+  margin-left: 26.666667cqw;
+}
+.engineering-page .project-storm .project-description { min-height: 11.944444cqw; }
+.engineering-page .project-storm .project-gallery {
+  grid-template-columns: minmax(0, 420fr) minmax(0, 421fr);
+  gap: .625cqw;
+  margin-top: 5.277778cqw;
+  margin-left: 18.680556cqw;
+  align-items: start;
+}
+
+/* Figma's fixed text box leaves the final line's descent in the gallery gap. */
+@media (min-width: 961px) {
+  .engineering-page .project-conrad .project-description { height: 19.791667cqw; }
+}
+
+@media (max-width: 880px) {
+  .engineering-page .sidebar-nav { padding-left: 20px; }
+  .engineering-page .project-description { line-height: 1.15; }
+  .engineering-page .project-title { line-height: 1.1; }
+}
+
+@media (max-width: 600px) {
+  .engineering-page .subpage-content { padding-top: 40px; padding-bottom: 40px; }
+  .engineering-page .project { padding-bottom: 40px; }
+  .engineering-page .project-title { padding: 14px 20px; min-height: 0; font-size: 22px; }
+  .engineering-page .project-description { margin: 24px 20px 0; min-height: 0; font-size: 16px; line-height: 1.4; }
+  .engineering-page .project-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin: 24px 20px 0;
+  }
+  .engineering-page .project-conrad .project-description,
+  .engineering-page .project-fire .project-description,
+  .engineering-page .project-storm .project-description { min-height: 0; }
+  .engineering-page .project-conrad .project-gallery,
+  .engineering-page .project-fire .project-gallery,
+  .engineering-page .project-storm .project-gallery { margin: 24px 20px 0; }
+  .engineering-page .project-storm .project-gallery { grid-template-columns: minmax(0, 1fr); }
+  .engineering-page .project-storm { padding-bottom: 0; }
+}

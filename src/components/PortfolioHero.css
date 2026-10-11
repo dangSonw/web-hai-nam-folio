@@ -1,0 +1,66 @@
+/* The hero is a layered typographic composition in the source frame. */
+.portfolio-hero {
+  --art-scale: 1;
+  position: relative;
+  display: grid;
+  grid-template-columns: 80.972222% 19.027778%;
+}
+.portfolio-hero .hero-art { position: relative; height: calc(49.513889cqw * var(--art-scale)); }
+.portfolio-hero .hero-art::before,
+.portfolio-hero .hero-art::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--rule);
+}
+.portfolio-hero .hero-art::before { top: calc(5.625cqw * var(--art-scale)); }
+.portfolio-hero .hero-art::after { top: calc(15.277778cqw * var(--art-scale)); }
+.portfolio-hero .name {
+  position: absolute;
+  top: calc(2.638889cqw * var(--art-scale));
+  left: calc(2.638889cqw * var(--art-scale));
+  right: 0;
+  overflow: hidden;
+  font-family: var(--display-font);
+  font-size: calc(12.487989cqw * var(--art-scale));
+  font-weight: 400;
+  line-height: 1.256763;
+  white-space: nowrap;
+}
+.portfolio-hero .portfolio-word {
+  position: absolute;
+  top: calc(17.361111cqw * var(--art-scale));
+  left: calc(38.402778cqw * var(--art-scale));
+  font-family: var(--display-font);
+  font-size: calc(14.168192cqw * var(--art-scale));
+  font-weight: 400;
+  line-height: .85;
+}
+.portfolio-hero .robot {
+  position: absolute;
+  z-index: 2;
+  top: calc(9.513889cqw * var(--art-scale));
+  left: calc(11.25cqw * var(--art-scale));
+  width: calc(28.819444cqw * var(--art-scale));
+  height: auto;
+  display: block;
+}
+.portfolio-hero .hero-rule {
+  position: absolute;
+  top: calc(40.833333cqw * var(--art-scale));
+  left: 0;
+  width: 123.4991%;
+  height: 1px;
+  background: var(--rule);
+}
+
+.portfolio-hero .name a { text-decoration: none; }
+.portfolio-hero > *,
+.portfolio-hero img { min-width: 0; }
+
+@media (max-width: 880px) {
+  .portfolio-hero { --art-scale: 1.234991; grid-template-columns: minmax(0, 1fr); }
+  .portfolio-hero .hero-rule { width: 100%; }
+}

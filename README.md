@@ -1,6 +1,6 @@
 # Hải Nam Folio — React + Vite
 
-Trang Home được dựng từ thiết kế Figma, tuân theo `../RULE.md`.
+Trang Home và Engineering được dựng từ thiết kế Figma Desktop, tuân theo `../RULE.md`.
 
 ## Chạy dự án
 
@@ -36,6 +36,7 @@ web-hai-nam-folio/
 │       ├── home/
 │       │   ├── robot.png
 │       │   └── portrait.png
+│       ├── engineering/       # 9 ảnh xuất từ layer gốc ở 2×
 │       └── fonts/
 └── src/
     ├── main.jsx
@@ -43,10 +44,16 @@ web-hai-nam-folio/
     ├── App.jsx
     ├── components/
     │   ├── SidebarNav.jsx
-    │   └── SidebarNav.css
+    │   ├── SidebarNav.css
+    │   ├── PortfolioHero.jsx
+    │   ├── PortfolioHero.css
+    │   ├── SubpageLayout.jsx
+    │   └── SubpageLayout.css
     └── pages/
         ├── Home.jsx
-        └── Home.css
+        ├── Home.css
+        ├── Engineering.jsx
+        └── Engineering.css
 ```
 
 `index.html` là entrypoint duy nhất, chứa `#root` và nạp `src/main.jsx`. React Router được khởi tạo ở `main.jsx`; router và PageTransition dùng framer-motion ở `App.jsx`. Tải lại hoặc mở URL nhánh trực tiếp luôn đưa về `/`. CSS Home dùng prefix `.home-page`; reset, font và biến chung nằm ở `src/index.css`. Asset dùng URL tuyệt đối `/assets/...`. `dist/` là kết quả build; `dist/` và `node_modules/` không được commit.
@@ -62,7 +69,11 @@ Home giữ bố cục gốc ở kích thước desktop. Tablet đưa menu lên �
 - `public/assets/home/portrait.png`: xuất nguyên layer `1:19` ở 2×, giữ crop từ thiết kế.
 - Font Orbitron Regular/Bold và Inter Regular lưu cục bộ từ Google Fonts, kèm giấy phép trong `public/assets/fonts/`.
 
-Chỉ Home đã được triển khai. Menu hiện mở các frame Engineering, Community, Research và Hobby trên Figma; sẽ đổi sang route nội bộ khi triển khai những trang đó. Các component dành cho video, album và layout trang con được thêm khi có trang thực tế sử dụng.
+Menu Engineering chuyển tới `/engineering` bằng React Router, có `aria-current` khi đang ở trang đó. Bấm tên Do Hai Nam để quay về Home. Chuyển trang cross-fade 0.22 giây, đưa vị trí cuộn về đầu trang và tôn trọng thiết lập giảm chuyển động. Reload hoặc mở trực tiếp `/engineering` vẫn trở về Home theo RULE.md. Community, Research và Hobby hiện mở frame Figma tương ứng.
+
+Engineering dùng `SubpageLayout` và CSS prefix `.engineering-page`, gồm VEX IQ Team 25812M, Conrad Challenge, Early Fire Detection IOT và Storm Warning App. Node nguồn `15:2` có kích thước 1440 × 4207. Chín ảnh trong `public/assets/engineering/` được xuất trực tiếp từ các Rectangle `15:36`, `15:37`, `15:38`, `15:48`, `15:49`, `15:50`, `15:59`, `43:3`, `43:6` ở 2×, giữ crop và tỷ lệ riêng của từng ảnh. Robot dùng lại asset Home vì hai layer có cùng image fill. Font 42dot Sans Light được lưu cục bộ ở dạng WOFF2 Latin từ Google Fonts, kèm giấy phép OFL.
+
+Tablet giữ gallery VEX/Conrad ba cột và ảnh Storm hai cột; mobile ≤600 px xếp dọc. Engineering là trang nội dung tĩnh trong Figma, không có video hoặc carousel.
 
 ## Kiểm tra
 
@@ -72,6 +83,9 @@ Chỉ Home đã được triển khai. Menu hiện mở các frame Engineering, 
 - Quan sát trực quan mobile, tablet, desktop và 4K.
 - HMR cập nhật Home mà không reload tài liệu hoặc phát sinh lỗi.
 - Mở trực tiếp URL nhánh và reload đều đưa về Home; Tab → Enter ở skip link chuyển focus tới About Me.
-- Bấm cả bốn mục menu đều mở đúng frame Figma trong tab mới.
+- Engineering chuyển bằng SPA; Community, Research và Hobby mở đúng frame Figma trong tab mới.
 - Console không có lỗi/cảnh báo; ảnh, font và module trả về HTTP 200.
 - Production preview ở cổng 5177 tải bản build thành công; URL nhánh vẫn đưa về Home, ảnh/font tải đủ, console không có lỗi. Tài nguyên đã cache trả HTTP 304.
+- Engineering: kiểm tra lại tại 375, 390, 768, 1200, 1440, 1920, 2560 và 3840 px; không tràn ngang, đủ chín ảnh, tỷ lệ render khớp asset gốc. Tọa độ quy đổi về canvas 1440 px của cả chín ảnh khớp Figma sau khi làm tròn pixel.
+- Home → Engineering → Home và nút Back giữ nguyên tài liệu, cuộn về đầu; `aria-current` hoạt động. Skip link Engineering chuyển focus tới `#projects`. HMR giữ phiên hiện tại; reload Engineering hoặc mở URL trực tiếp đều reset về Home.
+- Production Engineering: build thành công, console sạch, font WOFF2 tải HTTP 200, ảnh tải HTTP 200/304, desktop và mobile hiển thị đầy đủ.

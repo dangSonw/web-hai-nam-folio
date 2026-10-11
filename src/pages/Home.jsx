@@ -1,4 +1,4 @@
-import SidebarNav from '../components/SidebarNav.jsx';
+import PortfolioHero from '../components/PortfolioHero.jsx';
 import './Home.css';
 
 export default function Home() {
@@ -6,15 +6,7 @@ export default function Home() {
     <>
       <a className="skip-link" href="#about">Skip to About Me</a>
       <main id="main-content" className="home-page">
-        <section className="hero" aria-labelledby="portfolio-title">
-          <div className="hero-art">
-            <h1 id="portfolio-title" className="name">Do Hai Nam<span className="sr-only"> Portfolio</span></h1>
-            <p className="portfolio-word" aria-hidden="true">Port<br />-folio</p>
-            <img className="robot" src="/assets/home/robot.png" width="830" height="946" alt="A silver and black humanoid robot" fetchPriority="high" />
-            <span className="hero-rule" aria-hidden="true"></span>
-          </div>
-          <SidebarNav />
-        </section>
+        <PortfolioHero home />
         <section id="about" className="about" aria-labelledby="about-title" tabIndex="-1">
           <div className="about-heading">
             <h2 id="about-title">About Me</h2>
