@@ -75,7 +75,7 @@ Engineering dùng `SubpageLayout` và CSS prefix `.engineering-page`, gồm VEX 
 
 Tablet giữ gallery VEX/Conrad ba cột và ảnh Storm hai cột; mobile ≤600 px xếp dọc. Engineering là trang nội dung tĩnh trong Figma, không có video hoặc carousel.
 
-Menu Group 1 trong `SubpageLayout` đi theo khi cuộn: desktop nằm trong cột phải và dừng cách đầu màn hình 24 px; tablet/mobile là thanh menu bám đầu màn hình. Menu Home vẫn ở vị trí ban đầu trong hero và cuộn ra khỏi màn hình cùng hero. Dải tiêu đề trang con cao 90 px tại canvas 1440 px, co giãn tương ứng, để hiện đủ nét chữ và phần đuôi chữ g của cả tiêu đề đen lẫn bản outline.
+Menu Group 1 trong `SubpageLayout` đi theo khi cuộn: desktop nằm trong cột phải và dừng cách đầu màn hình 24 px; tablet/mobile là thanh menu bám đầu màn hình. Menu Home vẫn ở vị trí ban đầu trong hero và cuộn ra khỏi màn hình cùng hero. Dải tiêu đề giữ chiều cao gốc 65 px tại canvas 1440 px; chữ nằm trên lớp đường kẻ và được phép vẽ tràn theo chiều dọc để hiện đủ đuôi chữ g. Chỉ phần tràn ngang của tiêu đề lặp được cắt.
 
 ## Kiểm tra
 
@@ -88,7 +88,7 @@ Menu Group 1 trong `SubpageLayout` đi theo khi cuộn: desktop nằm trong cộ
 - Engineering chuyển bằng SPA; Community, Research và Hobby mở đúng frame Figma trong tab mới.
 - Console không có lỗi/cảnh báo; ảnh, font và module trả về HTTP 200.
 - Production preview ở cổng 5177 tải bản build thành công; URL nhánh vẫn đưa về Home, ảnh/font tải đủ, console không có lỗi. Tài nguyên đã cache trả HTTP 304.
-- Engineering: kiểm tra tại 375, 390, 768, 1200, 1440, 1920, 2560 và 3840 px; không tràn ngang, đủ chín ảnh, tỷ lệ render khớp asset gốc. Chiều ngang và kích thước ảnh khớp slot nguồn; chiều dọc có thêm khoảng trống từ dải tiêu đề được tăng chiều cao để giữ đủ nét chữ.
+- Engineering: kiểm tra tại 375, 390, 768, 1200, 1440, 1920, 2560 và 3840 px; không tràn ngang, đủ chín ảnh, tỷ lệ render khớp asset gốc. Vị trí đường kẻ và các khối nội dung giữ đúng thiết kế nguồn.
 - Home → Engineering → Home và nút Back giữ nguyên tài liệu, cuộn về đầu; `aria-current` hoạt động. Skip link Engineering chuyển focus tới `#projects`. HMR giữ phiên hiện tại; reload Engineering hoặc mở URL trực tiếp đều reset về Home.
 - Production Engineering: build thành công, console sạch, font WOFF2 tải HTTP 200, ảnh tải HTTP 200/304, desktop và mobile hiển thị đầy đủ.
-- Sau sửa tiêu đề/menu: kiểm tra lại 375, 768, 1440, 1920, 2560 và 3840 px, bao gồm cuộn giữa và cuối trang. Giới hạn nét chữ đo bằng font metrics nằm đủ trong dải tiêu đề; menu trang con vẫn thấy và bấm được, menu Home giữ hành vi cũ. HMR không mất phiên, chuyển SPA và reload vẫn đúng quy tắc.
+- Sau sửa tiêu đề/menu: kiểm tra lại 375, 768, 1440, 1920, 2560 và 3840 px, bao gồm cuộn giữa và cuối trang. Nét chữ không bị cắt theo chiều dọc; đường kẻ giữ vị trí gốc, chữ nằm trên lớp đường kẻ. Menu trang con vẫn thấy và bấm được, menu Home giữ hành vi cũ. HMR không mất phiên, chuyển SPA và reload vẫn đúng quy tắc.

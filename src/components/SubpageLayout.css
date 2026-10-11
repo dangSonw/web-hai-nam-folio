@@ -30,9 +30,10 @@
 .subpage-canvas .subpage-heading {
   display: flex;
   gap: 12.638889cqw;
-  height: 6.25cqw;
+  height: 4.513889cqw;
   padding-left: 5.277778cqw;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   border-block: 1px solid var(--rule);
   font-family: var(--display-font);
   font-size: 5.719113cqw;
@@ -43,6 +44,8 @@
 
 .subpage-canvas .subpage-heading h1,
 .subpage-canvas .subpage-heading span {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
   font-size: inherit;
   font-weight: inherit;
