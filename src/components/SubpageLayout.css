@@ -1,5 +1,6 @@
 .subpage-canvas {
   --rule: #000;
+  position: relative;
   width: 100%;
   max-width: clamp(1440px, 88vw, 2560px);
   min-height: 100vh;
@@ -7,10 +8,29 @@
   container-type: inline-size;
 }
 
+.subpage-canvas .subpage-navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 19.027778%;
+  padding-top: 15.277778cqw;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.subpage-canvas .subpage-navigation .sidebar-nav {
+  position: sticky;
+  top: 24px;
+  padding-top: 0;
+  border-left: 0;
+  pointer-events: auto;
+}
+
 .subpage-canvas .subpage-heading {
   display: flex;
   gap: 12.638889cqw;
-  height: 4.513889cqw;
+  height: 6.25cqw;
   padding-left: 5.277778cqw;
   overflow: hidden;
   border-block: 1px solid var(--rule);
@@ -38,6 +58,7 @@
   position: relative;
   width: 80.972222%;
   min-width: 0;
+  scroll-margin-top: 32px;
 }
 
 .subpage-canvas .subpage-content::after {
@@ -52,11 +73,23 @@
 }
 
 @media (max-width: 880px) {
-  .subpage-canvas .subpage-content { width: 100%; }
+  .subpage-canvas { display: flex; flex-direction: column; }
+  .subpage-canvas .subpage-navigation {
+    position: sticky;
+    top: 0;
+    bottom: auto;
+    order: -1;
+    width: 100%;
+    padding-top: 0;
+    background: var(--paper);
+  }
+  .subpage-canvas .subpage-navigation .sidebar-nav { position: static; padding-top: 12px; }
+  .subpage-canvas .subpage-content { width: 100%; scroll-margin-top: 84px; }
   .subpage-canvas .subpage-content::after { display: none; }
 }
 
 @media (max-width: 600px) {
+  .subpage-canvas .subpage-content { scroll-margin-top: 140px; }
   .subpage-canvas .subpage-heading {
     align-items: center;
     height: 56px;

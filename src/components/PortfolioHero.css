@@ -57,10 +57,12 @@
 }
 
 .portfolio-hero .name a { text-decoration: none; }
+.portfolio-hero .hero-sidebar-rail { border-left: 1px solid var(--rule); }
 .portfolio-hero > *,
 .portfolio-hero img { min-width: 0; }
 
 @media (max-width: 880px) {
   .portfolio-hero { --art-scale: 1.234991; grid-template-columns: minmax(0, 1fr); }
   .portfolio-hero .hero-rule { width: 100%; }
+  .portfolio-hero .hero-sidebar-rail { display: none; }
 }

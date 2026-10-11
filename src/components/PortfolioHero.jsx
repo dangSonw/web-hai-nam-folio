@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import SidebarNav from './SidebarNav.jsx';
 import './PortfolioHero.css';
 
-export default function PortfolioHero({ home = false }) {
+export default function PortfolioHero({ home = false, showNavigation = true }) {
   const Name = home ? 'h1' : 'p';
 
   return (
@@ -16,7 +16,7 @@ export default function PortfolioHero({ home = false }) {
         <img className="robot" src="/assets/home/robot.png" width="830" height="946" alt="A silver and black humanoid robot" fetchPriority="high" />
         <span className="hero-rule" aria-hidden="true"></span>
       </div>
-      <SidebarNav />
+      {showNavigation ? <SidebarNav /> : <div className="hero-sidebar-rail" aria-hidden="true" />}
     </section>
   );
 }

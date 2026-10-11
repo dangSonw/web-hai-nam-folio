@@ -1,4 +1,5 @@
 import PortfolioHero from './PortfolioHero.jsx';
+import SidebarNav from './SidebarNav.jsx';
 import './SubpageLayout.css';
 
 export default function SubpageLayout({ title, className, children }) {
@@ -6,7 +7,8 @@ export default function SubpageLayout({ title, className, children }) {
     <>
       <a className="skip-link" href="#projects">Skip to {title} projects</a>
       <main className={`subpage-canvas ${className}`}>
-        <PortfolioHero />
+        <div className="subpage-navigation"><SidebarNav /></div>
+        <PortfolioHero showNavigation={false} />
         <div className="subpage-heading">
           <h1>{title}</h1>
           <span aria-hidden="true">{title}</span>
