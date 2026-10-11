@@ -1,0 +1,55 @@
+.hobby-page .subpage-heading { gap: 9.583333cqw; }
+.hobby-page .subpage-heading > :last-child { margin-left: -1.180556cqw; }
+.hobby-page .sidebar-nav { padding-left: 2.638889cqw; }
+.hobby-page .subpage-content { padding-top: 9.791667cqw; padding-bottom: 2.638889cqw; }
+.hobby-page .hobby { min-width: 0; padding-bottom: 2.083333cqw; }
+.hobby-page .hobby-title {
+  min-height: 4.236111cqw;
+  padding: .763889cqw 3.263889cqw .9cqw 5.277778cqw;
+  border-block: 1px solid var(--rule);
+  font-family: var(--display-font);
+  font-size: clamp(22px, 2.777778cqw, 72px);
+  font-weight: 700;
+  line-height: .85;
+  overflow-wrap: anywhere;
+}
+.hobby-page .hobby-description {
+  margin: 2.083333cqw 3.263889cqw 0 5.277778cqw;
+  min-height: 6.944444cqw;
+  font-family: '42dot Sans', sans-serif;
+  font-size: clamp(16px, 1.666667cqw, 43px);
+  font-weight: 300;
+  line-height: 1;
+  text-align: justify;
+}
+.hobby-page .hobby-basketball .hobby-description { min-height: 8.611111cqw; }
+.hobby-page .hobby-manga .hobby-description,
+.hobby-page .hobby-boardgame .hobby-description {
+  margin-left: 5.208333cqw;
+  margin-right: 1.875cqw;
+  min-height: 7.708333cqw;
+}
+.hobby-page .hobby-games { padding-bottom: 0; }
+
+@media (max-width: 880px) {
+  .hobby-page .sidebar-nav { padding-left: 20px; }
+  .hobby-page .hobby-title { line-height: 1.1; }
+  .hobby-page .hobby-description { line-height: 1.15; }
+}
+@media (max-width: 600px) {
+  .hobby-page .subpage-heading { gap: 32px; }
+  .hobby-page .subpage-heading > :last-child { margin-left: 0; }
+  .hobby-page .subpage-content { padding-top: 40px; padding-bottom: 40px; }
+  .hobby-page .hobby { padding-bottom: 40px; }
+  .hobby-page .hobby-title { min-height: 0; padding: 14px 20px; font-size: 22px; }
+  .hobby-page .hobby-description,
+  .hobby-page .hobby-basketball .hobby-description,
+  .hobby-page .hobby-manga .hobby-description,
+  .hobby-page .hobby-boardgame .hobby-description {
+    min-height: 0;
+    margin: 24px 20px 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .hobby-page .hobby-games { padding-bottom: 0; }
+}

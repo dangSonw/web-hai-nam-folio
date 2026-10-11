@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx';
 import Engineering from './pages/Engineering.jsx';
 import Community from './pages/Community.jsx';
 import Research from './pages/Research.jsx';
+import Hobby from './pages/Hobby.jsx';
 
 function PageTransition({ children }) {
   const reducedMotion = useReducedMotion();
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/engineering" element={<PageTransition><Engineering /></PageTransition>} />
           <Route path="/community" element={<PageTransition><Community /></PageTransition>} />
           <Route path="/research" element={<PageTransition><Research /></PageTransition>} />
+          <Route path="/hobby" element={<PageTransition><Hobby /></PageTransition>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatePresence>
