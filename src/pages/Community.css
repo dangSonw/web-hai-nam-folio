@@ -1,0 +1,81 @@
+.community-page .subpage-heading { gap: 12.986111cqw; }
+.community-page .sidebar-nav { padding-left: 2.638889cqw; }
+
+.community-page .subpage-content {
+  padding-top: 9.791667cqw;
+  padding-bottom: 5.972222cqw;
+}
+
+.community-page .project { min-width: 0; }
+.community-page .project-title {
+  min-height: 4.236111cqw;
+  padding: .763889cqw 3.263889cqw .9cqw 19.166667cqw;
+  border-block: 1px solid var(--rule);
+  font-family: var(--display-font);
+  font-size: clamp(22px, 2.777778cqw, 72px);
+  font-weight: 700;
+  line-height: .85;
+  overflow-wrap: anywhere;
+}
+
+.community-page .project-description {
+  margin: 2.083333cqw 3.263889cqw 0 19.166667cqw;
+  min-height: 11.944444cqw;
+  font-family: '42dot Sans', sans-serif;
+  font-size: clamp(16px, 1.666667cqw, 43px);
+  font-weight: 300;
+  line-height: 1;
+  text-align: justify;
+}
+.community-page .project-description p + p { margin-top: 1em; }
+
+.community-page .project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.423611cqw;
+  margin: 2.083333cqw 3.263889cqw 0 5.277778cqw;
+}
+.community-page .project-gallery > * { min-width: 0; }
+.community-page .project-gallery img { display: block; width: 100%; height: auto; }
+
+.community-page .project-gart { padding-bottom: 14.166667cqw; }
+.community-page .project-gart .project-gallery { margin-top: 1.875cqw; }
+.community-page .project-mentor { padding-bottom: 14.166667cqw; }
+.community-page .project-stemina { padding-bottom: 3.819444cqw; }
+.community-page .project-stemina .project-description { min-height: 25.208333cqw; }
+.community-page .project-stemina .project-gallery { margin-top: 3.75cqw; }
+.community-page .project-amstro .project-description { min-height: 6.944444cqw; }
+.community-page .project-amstro .project-gallery {
+  grid-template-columns: minmax(0, 1fr);
+  margin-left: 11.25cqw;
+}
+
+/* Preserve the source text frame; its last line can paint into the image gap. */
+@media (min-width: 961px) {
+  .community-page .project-stemina .project-description { height: 25.208333cqw; }
+}
+
+@media (max-width: 880px) {
+  .community-page .sidebar-nav { padding-left: 20px; }
+  .community-page .project-description { line-height: 1.15; }
+  .community-page .project-title { line-height: 1.1; }
+}
+
+@media (max-width: 600px) {
+  .community-page .subpage-heading { gap: 32px; }
+  .community-page .subpage-content { padding-top: 40px; padding-bottom: 40px; }
+  .community-page .project { padding-bottom: 40px; }
+  .community-page .project-title { padding: 14px 20px; min-height: 0; font-size: 22px; }
+  .community-page .project-description { margin: 24px 20px 0; min-height: 0; font-size: 16px; line-height: 1.4; }
+  .community-page .project-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin: 24px 20px 0;
+  }
+  .community-page .project-gart .project-gallery,
+  .community-page .project-stemina .project-gallery,
+  .community-page .project-amstro .project-gallery { margin: 24px 20px 0; }
+  .community-page .project-stemina .project-description,
+  .community-page .project-amstro .project-description { min-height: 0; }
+  .community-page .project-amstro { padding-bottom: 0; }
+}

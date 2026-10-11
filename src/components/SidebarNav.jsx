@@ -3,7 +3,7 @@ import './SidebarNav.css';
 
 const sections = [
   { label: 'Engineering', nodeId: '15-2', path: '/engineering' },
-  { label: 'Community', nodeId: '15-87' },
+  { label: 'Community', nodeId: '15-87', path: '/community' },
   { label: 'Research', nodeId: '15-153' },
   { label: 'Hobby', nodeId: '45-2' },
 ];

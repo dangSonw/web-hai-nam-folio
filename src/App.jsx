@@ -3,6 +3,7 @@ import { useLayoutEffect } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Engineering from './pages/Engineering.jsx';
+import Community from './pages/Community.jsx';
 
 function PageTransition({ children }) {
   const reducedMotion = useReducedMotion();
@@ -30,6 +31,7 @@ export default function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
           <Route path="/engineering" element={<PageTransition><Engineering /></PageTransition>} />
+          <Route path="/community" element={<PageTransition><Community /></PageTransition>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatePresence>
