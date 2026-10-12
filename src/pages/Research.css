@@ -43,15 +43,14 @@
 .research-page .project-medical .project-gallery {
   grid-template-columns: minmax(0, 1fr);
   width: 44.375cqw;
-  margin-left: 18.611111cqw;
-  margin-right: 0;
+  margin-inline: auto;
 }
 .research-page .project-fridge .project-description { min-height: 6.944444cqw; }
 .research-page .project-fridge .project-gallery {
   grid-template-columns: minmax(0, 1fr);
   width: 59.513889cqw;
   margin-top: 3.194444cqw;
-  margin-right: 0;
+  margin-inline: auto;
 }
 
 /* These two native exports include the shadows outside their image frames. */
