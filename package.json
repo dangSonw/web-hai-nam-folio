@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite preview"
+    "start": "npm run dev"
   },
   "dependencies": {
     "framer-motion": "^14.1.0",
